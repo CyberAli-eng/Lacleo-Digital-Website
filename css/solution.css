@@ -1,0 +1,212 @@
+ /* Services Section */
+ .services-section {
+     background: var(--white);
+ }
+
+ .services-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+     gap: 30px;
+     margin-top: 50px;
+ }
+
+ .service-card {
+     background: var(--white);
+     border-radius: 15px;
+     padding: 30px;
+     box-shadow: var(--shadow);
+     transition: var(--transition);
+     border-left: 4px solid var(--primary);
+ }
+
+ .service-card:hover {
+     transform: translateY(-5px);
+     box-shadow: var(--shadow-lg);
+ }
+
+ .service-icon {
+     width: 60px;
+     height: 60px;
+     border-radius: 50%;
+     background: linear-gradient(135deg, var(--primary), var(--secondary));
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin-bottom: 20px;
+ }
+
+ .service-icon i {
+     font-size: 1.5rem;
+     color: var(--white);
+ }
+
+ .service-title {
+     font-size: 1.5rem;
+     font-weight: 700;
+     margin-bottom: 15px;
+     color: var(--dark);
+ }
+
+ .service-description {
+     color: var(--gray);
+     line-height: 1.6;
+ }
+
+ /* Results Section */
+ .results-section {
+     background: linear-gradient(135deg, #1E293B 0%, #334155 100%);
+     color: var(--white);
+ }
+
+ .results-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+     gap: 30px;
+     margin-top: 50px;
+ }
+
+ .result-card {
+     background: rgba(255, 255, 255, 0.1);
+     border-radius: 15px;
+     padding: 30px;
+     text-align: center;
+     backdrop-filter: blur(10px);
+     border: 1px solid rgba(255, 255, 255, 0.1);
+     transition: var(--transition);
+ }
+
+ .result-card:hover {
+     transform: translateY(-5px);
+     background: rgba(255, 255, 255, 0.15);
+ }
+
+ .result-icon {
+     font-size: 2.5rem;
+     margin-bottom: 20px;
+     color: var(--accent);
+ }
+
+ .result-title {
+     font-size: 1.3rem;
+     font-weight: 700;
+     margin-bottom: 15px;
+ }
+
+ .result-description {
+     opacity: 0.9;
+     line-height: 1.6;
+ }
+
+ /* Companies Section */
+ .companies-section {
+     background: var(--light);
+ }
+
+ .companies-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+     gap: 30px;
+     margin-top: 50px;
+ }
+
+ .company-card {
+     background: var(--white);
+     border-radius: 10px;
+     padding: 25px;
+     text-align: center;
+     box-shadow: var(--shadow);
+     transition: var(--transition);
+ }
+
+ .company-card:hover {
+     transform: translateY(-5px);
+     box-shadow: var(--shadow-lg);
+ }
+
+ .company-icon {
+     font-size: 2rem;
+     color: var(--primary);
+     margin-bottom: 15px;
+ }
+
+ .company-title {
+     font-size: 1.2rem;
+     font-weight: 600;
+     margin-bottom: 10px;
+ }
+
+ .company-description {
+     color: var(--gray);
+     font-size: 0.9rem;
+     line-height: 1.5;
+ }
+
+ /* CTA Section */
+ .cta-section {
+     background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+     color: var(--white);
+     text-align: center;
+     padding: 100px 0;
+ }
+
+ .cta-title {
+     font-size: 2.5rem;
+     font-weight: 800;
+     margin-bottom: 20px;
+ }
+
+ .cta-description {
+     font-size: 1.2rem;
+     margin-bottom: 40px;
+     max-width: 700px;
+     margin-left: auto;
+     margin-right: auto;
+     opacity: 0.9;
+ }
+
+ .cta-button {
+     background: var(--accent);
+     color: var(--dark);
+     padding: 15px 30px;
+     border-radius: 50px;
+     font-weight: 700;
+     font-size: 1.1rem;
+     display: inline-flex;
+     align-items: center;
+     gap: 10px;
+     transition: var(--transition);
+ }
+
+ .cta-button:hover {
+     background: var(--accent-dark);
+     transform: translateY(-3px);
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+ }
+
+ @media (max-width: 768px) {
+     .section {
+         padding: 60px 0;
+     }
+
+     .section-title {
+         font-size: 2rem;
+     }
+
+     .hero-title {
+         font-size: 2.2rem;
+     }
+
+     .services-grid,
+     .results-grid,
+     .companies-grid {
+         grid-template-columns: 1fr;
+     }
+
+     .nav-links {
+         display: none;
+     }
+
+     .mobile-toggle {
+         display: block;
+     }
+ }

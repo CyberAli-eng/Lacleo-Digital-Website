@@ -7,13 +7,13 @@ let carouselInterval;
 
 async function loadComponent(componentName, elementId) {
     const element = document.getElementById(elementId);
-    
+
     // Check if placeholder element exists
     if (!element) {
         console.warn(`Element with ID '${elementId}' not found for component '${componentName}'`);
         return;
     }
-    
+
     // Check cache first
     if (componentCache[componentName]) {
         element.innerHTML = componentCache[componentName];
@@ -21,25 +21,25 @@ async function loadComponent(componentName, elementId) {
         initDynamicContent();
         return;
     }
-    
+
     try {
         const response = await fetch(`components/${componentName}.html`);
-        
+
         // Check if response is successful
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        
+
         const html = await response.text();
-        
+
         // Check if HTML content was received
         if (!html || html.trim().length === 0) {
             throw new Error(`Empty content for component '${componentName}'`);
         }
-        
+
         // Cache the component
         componentCache[componentName] = html;
-        
+
         // Insert into page
         element.innerHTML = html;
         console.log(`Successfully loaded component '${componentName}'`);
@@ -56,37 +56,37 @@ async function loadComponent(componentName, elementId) {
 // Initialize ALL dynamic content after components load
 function initDynamicContent() {
     console.log("Initializing all dynamic content");
-    
+
     // Initialize mobile menu
     initMobileMenu();
-    
+
     // Initialize dropdown menus
     initDropdowns();
-    
+
     // Initialize carousel if it exists
     initCarousel();
-    
+
     // Initialize animations
     initAnimations();
-    
+
     // Initialize form handling
     initFormHandling();
-    
+
     // Initialize stats animations
     initStats();
-    
+
     // Initialize header scroll effect
     initHeaderScroll();
 }
 
 // Load all components when DOM is ready
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     console.log("DOM loaded, starting component loading...");
-    
+
     // Load header and footer on all pages
     loadComponent('header', 'header-placeholder');
     loadComponent('footer', 'footer-placeholder');
-    
+
     // Load page-specific components with delay to avoid race conditions
     setTimeout(() => {
         if (document.getElementById('clients-placeholder')) {
@@ -103,14 +103,13 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }, 100);
 });
-
 // Initialize mobile menu
 function initMobileMenu() {
     const mobileToggle = document.getElementById("mobileToggle");
     const navLinks = document.getElementById("navLinks");
 
     if (mobileToggle && navLinks) {
-        mobileToggle.addEventListener("click", function() {
+        mobileToggle.addEventListener("click", function () {
             navLinks.classList.toggle("active");
             const icon = mobileToggle.querySelector("i");
             if (icon) {
@@ -127,10 +126,10 @@ function initMobileMenu() {
 // Initialize dropdown menus
 function initDropdowns() {
     const navItems = document.querySelectorAll(".nav-item");
-    
+
     if (navItems.length > 0) {
         navItems.forEach((item) => {
-            item.addEventListener("click", function(e) {
+            item.addEventListener("click", function (e) {
                 if (window.innerWidth <= 768) {
                     if (this.querySelector(".dropdown-menu")) {
                         e.preventDefault();
@@ -139,9 +138,9 @@ function initDropdowns() {
                 }
             });
         });
-        
+
         // Close dropdowns when clicking outside
-        document.addEventListener("click", function(e) {
+        document.addEventListener("click", function (e) {
             if (!e.target.closest(".nav-item") && window.innerWidth <= 768) {
                 navItems.forEach((item) => {
                     item.classList.remove("active");
@@ -149,6 +148,7 @@ function initDropdowns() {
             }
         });
         console.log("Dropdown menus initialized");
+        
     }
 }
 
@@ -168,7 +168,7 @@ function initCarousel() {
     if (carousel && cards.length > 0) {
         const cardCount = cards.length;
         const angle = 360 / cardCount;
-        
+
         console.log(`Initializing carousel with ${cardCount} cards`);
 
         // Initialize carousel
@@ -224,7 +224,7 @@ function initCarousel() {
                 rotateCarousel();
             }, 5000);
         }
-        
+
         // Reset interval when user interacts
         function resetCarouselInterval() {
             clearInterval(carouselInterval);
@@ -234,7 +234,7 @@ function initCarousel() {
         // Initialize carousel position
         rotateCarousel();
         startCarouselInterval();
-        
+
         console.log("Carousel initialized successfully");
     } else {
         console.log("Carousel elements not found on this page");
@@ -263,70 +263,54 @@ function initAnimations() {
             card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
             observer.observe(card);
         });
-        
+
         console.log("Animations initialized");
     }
 }
 
-// Initialize form handling
 function initFormHandling() {
     const form = document.getElementById('consultationForm');
+    const formSection = document.getElementById('formSection');
+    const toggleBtn = document.getElementById('toggleFormBtn');
     const successMessage = document.getElementById('successMessage');
 
-    if (form) {
-        // Add animation to form elements on focus
-        const formControls = document.querySelectorAll('.form-control');
-        formControls.forEach(control => {
-            control.addEventListener('focus', () => {
-                control.parentElement.style.transform = 'translateY(-5px)';
-                control.parentElement.style.transition = 'transform 0.3s ease';
-            });
-
-            control.addEventListener('blur', () => {
-                control.parentElement.style.transform = 'translateY(0)';
-            });
+    // --- New Toggle Logic ---
+    if (toggleBtn && formSection) {
+        toggleBtn.addEventListener('click', function () {
+            formSection.style.display = "block";
+            toggleBtn.style.display = "none";   // hide button after click
         });
+        console.log("Form toggle initialized");
+    }
 
-        // Form submission handling
-        form.addEventListener('submit', function(e) {
+    if (form) {
+        form.addEventListener('submit', function (e) {
             e.preventDefault();
 
-            // Simple validation
             let isValid = true;
             const requiredFields = form.querySelectorAll('[required]');
-
             requiredFields.forEach(field => {
                 if (!field.value.trim()) {
                     field.style.borderColor = '#ff6b6b';
                     isValid = false;
-
-                    // Reset border color when user starts typing
-                    field.addEventListener('input', function() {
-                        if (field.value.trim()) {
-                            field.style.borderColor = 'rgba(255, 255, 255, 0.1)';
-                        }
-                    });
                 }
             });
 
             if (isValid && successMessage) {
-                // Simulate form submission success
                 form.style.display = 'none';
                 successMessage.style.display = 'block';
-
-                // You would typically send the form data to a server here
                 console.log('Form submitted successfully');
             }
         });
-        
         console.log("Form handling initialized");
     }
 }
 
+
 // Initialize stats animations
 function initStats() {
     const stats = document.querySelectorAll('.stat');
-    
+
     if (stats.length > 0) {
         stats.forEach(stat => {
             stat.addEventListener('mouseover', () => {
@@ -337,7 +321,7 @@ function initStats() {
                 stat.style.transform = 'scale(1)';
             });
         });
-        
+
         console.log("Stats animations initialized");
     }
 }
@@ -345,9 +329,9 @@ function initStats() {
 // Initialize header scroll effect
 function initHeaderScroll() {
     const header = document.querySelector('.header');
-    
+
     if (header) {
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             if (window.scrollY > 100) {
                 header.style.background = "rgba(255, 255, 255, 0.95)";
                 header.style.backdropFilter = "blur(10px)";
