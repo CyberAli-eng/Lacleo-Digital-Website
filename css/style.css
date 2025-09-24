@@ -108,9 +108,8 @@ ul {
     top: 0;
     left: 0;
     width: 100%;
-
-    background: rgb(255, 255, 255);
-    z-index: 1000;
+    background: var(--white);
+    z-index: 10000;
 }
 
 .navbar {
@@ -119,17 +118,10 @@ ul {
     justify-content: space-between;
     padding: 10px 0;
 }
-
 .logo {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--primary);
-}
-
-.logo span {
-    color: purple;
-    font-size: 1.8rem;
-    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .logo img {
@@ -489,7 +481,6 @@ ul {
 }
 
 .stories-grid {
-    width: 25%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
@@ -500,10 +491,10 @@ ul {
 .story-card {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    padding: 20px;
+    padding: 40px;
     transition: var(--transition);
     border-radius: 10px;
-    box-shadow: var(--shadow);
+    bottom: 0;
 }
 
 .story-card:hover {
@@ -514,11 +505,14 @@ ul {
 .story-logo {
     height: 80px;
     margin-bottom: 10px;
+    object-fit: contain;
+    margin-right: 50px !important;
 
 }
 
 .story-logo img {
     height: 100%;
+    object-fit: contain;
     width: auto;
 }
 

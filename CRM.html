@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM Solutions - LaCleo Digital</title>
+    <meta name="description"
+        content="Drive predictable revenue growth with our BANT-qualified lead generation services. We deliver sales-ready prospects that meet Budget, Authority, Need, and Timeline criteria.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="icon" type="image/png" href="./assets/img/logoo.png" />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/service.css">
+    <link rel="stylesheet" href="../css/solution.css">
+    <style>
+
+ /* Why Work With Us Section */
+        .why-work-section {
+            background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-work-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" opacity="0.05"><circle cx="50" cy="50" r="2" fill="%232563EB"/></svg>');
+            background-size: 50px 50px;
+        }
+
+        .challenge-solution-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .challenge-solution-item {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow-lg);
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .challenge-solution-item.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .challenge-solution-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+        }
+
+        .challenge-part {
+            padding-right: 20px;
+            border-right: 1px solid var(--gray-light);
+        }
+
+        .challenge-label {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .challenge-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dark);
+            line-height: 1.4;
+        }
+
+        .solution-part h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .solution-part h3 i {
+            color: var(--accent);
+        }
+
+        .solution-text {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="services-hero-content">
+                <div class="services-hero-text">
+                    <span class="hero-badge">Solutions for CRM Software
+                    </span>
+                    <h1> LaCleo Digital helps CRM software providers generate qualified leads and engage the right buyers. </h1>
+                    <p class="hero-description">LaCleo Digital designs campaigns that align the product’s strengths with business needs, making it easier to build trust and convert prospects into customers.
+</p>
+                        <a href="#contact-form-placeholder" class="btn btn-primary">Get Started <i class="fas fa-arrow-right"></i></a>
+
+                    
+                </div>
+                <div class="services-hero-image">
+                    <img src="../assets/img/Solution/CRM.jpeg" alt="CRM Solutions">    
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+      <!-- Services Section -->
+    <section class="section services-section">
+        <div class="container">
+            <h2 class="section-title">How LaCleo Digital Helps CRM Vendors Grow</h2>
+            <p class="section-subtitle">We provide full support in the lead generation process:
+</p>
+            <br>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="service-title">Strategy & Research</h3>
+                    <p class="service-description"> Map out target markets, business profiles, and decision-maker roles that match your ideal CRM user.
+
+</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3 class="service-title">Message Development and Content</h3>
+                    <p class="service-description"> Create messaging focused on clear use cases, integration benefits, and ROI. Deliver content like case studies, product comparisons, and webinars.
+</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-broadcast-tower"></i>
+                    </div>
+                    <h3 class="service-title">Omni-Channel Outreach</h3>
+                    <p class="service-description">Engage prospects through email, LinkedIn, calls, chatbot, or online events. Use professional follow-up to build interest and keep CRM solutions top of mind.
+
+</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-filter"></i>
+                    </div>
+                    <h3 class="service-title">Lead Qualification & Meeting Setting</h3>
+                    <p class="service-description">  Screen for high-intent buyers, set up product demos or discovery calls, and filter out leads that do not fit.
+
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3 class="service-title">Nurture & Conversion Support</h3>
+                    <p class="service-description"> Guide prospects with ongoing updates, drip campaigns, and reminders that keep conversations active until they are ready to purchase.
+`</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3 class="service-title">Analysis & Optimization</h3>
+                    <p class="service-description">  Track and optimize metrics such as conversion rate, engagement, and sales cycle speed to improve ROI and pipeline growth.
+</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+  <!-- Why Work With Us Section -->
+    <section class="section why-work-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-h2">Why CRM Software Companies Choose Us
+</h2>
+            </div>
+            
+            <div class="challenge-solution-grid">
+                <div class="challenge-solution-item">
+                    <div class="challenge-part">
+                        <span class="challenge-label">Challenge</span>
+                        <p class="challenge-text">Differentiating in a crowded market
+
+</p>
+                    </div>
+                    <div class="solution-part">
+                        <h3><i class="fas fa-users"></i> How LaCleo Digital Helps</h3>
+                        <p class="solution-text">We help clarify your value proposition so prospects understand what sets you apart—whether it’s automation, integration, usability, support, or cost.
+
+</p>
+                    </div>
+                </div>
+                
+                <div class="challenge-solution-item">
+                    <div class="challenge-part">
+                        <span class="challenge-label">Challenge</span>
+                        <p class="challenge-text">Demonstrating ROI early</p>
+                    </div>
+                    <div class="solution-part">
+                        <h3><i class="fas fa-chart-line"></i> How LaCleo Digital Helps
+
+
+</h3>
+                        <p class="solution-text">We combine data sources, targeted outreach, and multi-touch strategies to reach the right people: sales leaders, operations managers, IT heads, etc.
+
+</p>
+                    </div>
+                </div>
+                
+                <div class="challenge-solution-item">
+                    <div class="challenge-part">
+                        <span class="challenge-label">Challenge</span>
+                        <p class="challenge-text">Shortening sales cycles
+
+</p>
+                    </div>
+                    <div class="solution-part">
+                        <h3><i class="fas fa-tachometer-alt"></i> How LaCleo Digital Helps</h3>
+                        <p class="solution-text">With educational content, trial or demo engagement, and timely follow-ups, we push prospects more quickly toward evaluation and purchase.
+
+</p>
+                    </div>
+                </div>
+                
+                <div class="challenge-solution-item">
+                    <div class="challenge-part">
+                        <span class="challenge-label">Challenge</span>
+                        <p class="challenge-text">Improving conversion and retention
+
+</p>
+                    </div>
+                    <div class="solution-part">
+                        <h3><i class="fas fa-handshake"></i> How LaCleo Digital Helps</h3>
+                        <p class="solution-text">We use feedback loops, onboarding materials, and lifecycle communication to help users adopt your software fully and stay engaged.</p>
+                    </div>
+                </div>
+                
+                <div class="challenge-solution-item">
+                    <div class="challenge-part">
+                        <span class="challenge-label">Challenge</span>
+                        <p class="challenge-text">Scaling growth predictably
+
+</p>
+                    </div>
+                    <div class="solution-part">
+                        <h3><i class="fas fa-expand"></i> How LaCleo Digital Helps</h3>
+                        <p class="solution-text">With measurable KPIs, reliable lead sources, and marketing automation in place, we help you forecast growth and scale without lowering standards.
+
+</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section companies-section">
+        <div class="container">
+            <h2 class="section-title">Companies We’ve Supported
+ 
+</h2>
+            <br>
+            <div class="companies-grid">
+                <div class="company-card">
+                    <div class="company-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="company-title">CRM providers </h3>
+                    <p class="company-description"> Boosting trial signups and demo conversions.
+</p>
+                </div>
+                
+                <div class="company-card">
+                    <div class="company-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="company-title">Enterprise CRM Vendors</h3>
+                    <p class="company-description">building partnerships with mid-market and large teams.</p>
+                </div>
+
+                <div class="company-card">
+                    <div class="company-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3 class="company-title">Cloud Based CRM platforms</h3>
+                    <p class="company-description">Driving interest from tech and marketing leaders through targeted campaigns.</p>
+                </div>
+                
+                <div class="company-card">
+                    <div class="company-icon">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <h3 class="company-title">AI-driven CRM makers</h3>
+                    <p class="company-description">Showing integration value and workflow improvements through AI capabilities.</p>
+                </div>
+                
+                
+            </div>
+        </div>
+    </section>
+ 
+      <!-- Results Section -->
+    <section class="section results-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Results You Can Expect</h2>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Within three to six months, CRM clients often see:</p>
+
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="result-title">A rise in qualified demos and meetings
+</h3>
+                </div>
+                
+                <div class="result-card">
+                    <div class="result-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3 class="result-title">Quicker decisions from first contact to sale
+</h3>
+                </div>
+                
+                <div class="result-card">
+                    <div class="result-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="result-title">Leads with budget and authority to buy
+
+</h3>
+                </div>
+                
+                <div class="result-card">
+                    <div class="result-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="result-title">Stronger ROI from targeted outreach
+
+</h3>
+                </div>
+                
+                <div class="result-card">
+                    <div class="result-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3 class="result-title">A pipeline with predictable, steady lead flow
+</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container section">
+            <div class="header1">
+                <h2 class="section-h2">Why Choose LaCleo Digital?
+
+                </h2>
+            </div>
+
+            <div class="benefits-container">
+                <div class="benefits-content">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="benefit-text">
+                            <p class="section-desc">Industry knowledge paired with data-driven targeting
+</p>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="benefit-text">
+                            <p class="section-desc">Campaigns designed for CRM benefits and buyer needs
+</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="benefit-text">
+                            <p class="section-desc">Clear reporting and regular performance tracking
+</p>
+                        </div>
+
+                    </div>
+
+                    <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="benefit-text">
+                                <p class="section-desc"> Flexible, adaptive strategy as CRM markets shift
+</p>
+                            </div>
+                        </div>
+                            <div class="benefit-item">
+                                 <div class="benefit-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="benefit-text">
+                                <p class="section-desc">Trusted by startups and established CRM brands
+</p>    
+                            </div>
+                        </div>
+                </div>
+<p class="section-desc benefit-text">Let’s work together to build a CRM software lead pipeline ready for real opportunities.
+</p>
+        </div>
+    </section>
+   <!-- CTA Section -->
+   <div class="cta-section">
+       <div class="container">
+           <h2 class="cta-title">Ready to Get Started?
+           </h2>
+           <a href="#contact-form-placeholder" class="cta-button">
+               <i class="fas fa-paper-plane"></i>
+               Start Your Growth Journey Today
+           </a>
+       </div>
+    </div>
+
+
+
+<br><br>
+
+    <!-- Testimonials Section -->
+   <div id="review-placeholder"></div>
+   <div id="contact-form-placeholder"></div>
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="../js/components.js"></script>
+    <script>
+        // Animate challenge-solution items on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const items = document.querySelectorAll('.challenge-solution-item');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            items.forEach(item => {
+                observer.observe(item);
+            });
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,1000 +1,648 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Software & SaaS Solutions - LaCleo Digital</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Why Work With Us - LaCleo Digital</title>
+    <link rel="stylesheet" href="../css/style.css" />   
+    <link rel="stylesheet" href="../css/service.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <style>
-        /* Your existing CSS variables and base styles */
-        :root {
-            --primary: #2563EB;
-            --primary-dark: #1D4ED8;
-            --secondary: #8B5CF6;
-            --accent: #FFC107;
-            --accent-dark: #F59E0B;
-            --dark: #1E293B;
-            --light: #F8FAFC;
-            --gray: #64748B;
-            --gray-light: #E2E8F0;
-            --white: #FFFFFF;
-            --success: #10B981;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
-        }
+       
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Inter, Arial, sans-serif;
-            background: var(--white);
-            color: var(--dark);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .section {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            color: var(--dark);
-        }
-
-        .section-subtitle {
-            font-size: 1.2rem;
-            color: var(--gray);
-            margin-bottom: 40px;
-            max-width: 600px;
-        }
-
-        /* Header & Navigation - Your existing styles */
-        .header {
-            background-attachment: scroll;
-            position: fixed;
-            box-shadow: var(--shadow);
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgb(255, 255, 255);
-            z-index: 1000;
-        }
-
-        .navbar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px 0;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .logo img {
-            height: 70px;
-            width: auto;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-        }
-
-        .nav-item {
-            position: relative;
-        }
-
-        .nav-link {
-            font-weight: 500;
-            color: var(--dark);
-            padding: 10px 0;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .nav-link:hover {
-            color: var(--primary);
-        }
-
-        .dropdown-menu {
-            position: absolute;
-            top: 50px;
-            background: var(--white);
-            border-radius: 20px;
-            box-shadow: var(--shadow-lg);
-            padding: 50px;
-            display: none;
-            min-width: 250px;
-            z-index: 100;
-        }
-
-        .nav-item:hover .dropdown-menu {
-            display: flex;
-            gap: 50px;
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .dropdown-column {
-            flex: 1;
-            min-width: 200px;
-        }
-
-        .dropdown-title {
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: var(--primary);
-            font-size: 1.1rem;
-        }
-
-        .dropdown-item {
-            padding: 8px 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .dropdown-item:hover {
-            color: var(--primary);
-        }
-
-        /* Nested dropdown */
-        .dropdown-item.has-nested {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nested-dropdown {
-            position: absolute;
-            left: 100%;
-            top: -25px;
-            background: var(--white);
-            border-radius: 12px;
-            box-shadow: var(--shadow-lg);
-            padding: 25px;
-            min-width: 250px;
-            display: none;
-            opacity: 0;
-            transform: translateX(10px);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            z-index: 101;
-        }
-
-        .dropdown-item:hover .nested-dropdown {
-            display: block;
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .nav-action {
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .button {
-            background: var(--primary);
-            color: var(--white);
-            padding: 10px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .button:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-
-        .mobile-toggle {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Hero Section for Software & SaaS */
-        .hero-software {
-            padding: 180px 0 80px;
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        /* Why Work With Us Section */
+        .why-work-section {
+            background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
             position: relative;
             overflow: hidden;
         }
 
-        .hero-software::before {
+        .why-work-section::before {
             content: '';
             position: absolute;
             top: 0;
+            left: 0;
             right: 0;
-            width: 50%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(37, 99, 235, 0.05)"/></svg>') no-repeat;
-            background-size: cover;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" opacity="0.05"><circle cx="50" cy="50" r="2" fill="%232563EB"/></svg>');
+            background-size: 50px 50px;
         }
 
-        .hero-content {
+        .challenge-solution-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .challenge-solution-item {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow-lg);
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
             align-items: center;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
             position: relative;
-            z-index: 1;
+            overflow: hidden;
         }
 
-        .hero-text {
-            max-width: 600px;
+        .challenge-solution-item.animated {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        .hero-badge {
+        .challenge-solution-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+        }
+
+        .challenge-part {
+            padding-right: 20px;
+            border-right: 1px solid var(--gray-light);
+        }
+
+        .challenge-label {
             display: inline-block;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            background: var(--primary);
             color: var(--white);
-            padding: 8px 16px;
+            padding: 5px 12px;
             border-radius: 20px;
             font-size: 0.9rem;
             font-weight: 600;
-            margin-bottom: 20px;
-        }
-
-        .hero-title {
-            font-size: 3rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            color: var(--dark);
-        }
-
-        .hero-description {
-            font-size: 1.2rem;
-            color: var(--dark);
-            margin-bottom: 40px;
-            line-height: 1.6;
-        }
-
-        .hero-image {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hero-image img {
-            max-width: 100%;
-            border-radius: 10px;
-            box-shadow: var(--shadow-lg);
-        }
-
-        /* Services Section */
-        .services-section {
-            background: var(--white);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .service-card {
-            background: var(--white);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            border-left: 4px solid var(--primary);
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .service-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        .service-icon i {
-            font-size: 1.5rem;
-            color: var(--white);
-        }
-
-        .service-title {
-            font-size: 1.5rem;
-            font-weight: 700;
             margin-bottom: 15px;
+        }
+
+        .challenge-text {
+            font-size: 1.1rem;
+            font-weight: 600;
             color: var(--dark);
+            line-height: 1.4;
         }
 
-        .service-description {
-            color: var(--gray);
-            line-height: 1.6;
+        .solution-part h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        /* Results Section */
-        .results-section {
-            background: linear-gradient(135deg, #1E293B 0%, #334155 100%);
-            color: var(--white);
-        }
-
-        .results-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .result-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: var(--transition);
-        }
-
-        .result-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        .result-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+        .solution-part h3 i {
             color: var(--accent);
         }
 
-        .result-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-
-        .result-description {
-            opacity: 0.9;
+        .solution-text {
+            color: var(--gray);
             line-height: 1.6;
         }
 
-        /* Companies Section */
-        .companies-section {
-            background: var(--light);
-        }
-
-        .companies-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .company-card {
+        /* Process Section */
+        .process-section {
             background: var(--white);
-            border-radius: 10px;
-            padding: 25px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
         }
 
-        .company-card:hover {
-            transform: translateY(-5px);
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .process-step {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 40px 30px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .process-step.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .process-step:hover {
+            transform: translateY(-10px);
             box-shadow: var(--shadow-lg);
         }
 
-        .company-icon {
-            font-size: 2rem;
-            color: var(--primary);
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 25px;
+        }
+
+        .process-step h3 {
+            font-size: 1.4rem;
             margin-bottom: 15px;
+            color: var(--dark);
         }
 
-        .company-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .company-description {
+        .process-step p {
             color: var(--gray);
-            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Expectations Section */
+        .expectations-section {
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            color: var(--white);
+        }
+
+        .expectations-section .section-title {
+            color: var(--white);
+        }
+
+        .expectations-section .section-subtitle {
+            color: #CBD5E1;
+        }
+
+        .expectations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .expectation-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .expectation-item.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .expectation-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .expectation-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .expectation-icon i {
+            font-size: 1.8rem;
+            color: var(--dark);
+        }
+
+        .expectation-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--white);
+        }
+
+        /* Why Choose Section */
+        .why-choose-section {
+            background: var(--light);
+        }
+
+        .advantages-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 60px;
+            align-items: center;
+        }
+
+        .advantages-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .advantage-item {
+            display: flex;
+            gap: 20px;
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.6s ease;
+        }
+
+        .advantage-item.animated {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .advantage-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--success), #059669);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .advantage-icon i {
+            font-size: 1.3rem;
+            color: var(--white);
+        }
+
+        .advantage-text h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+
+        .advantage-text p {
+            color: var(--gray);
             line-height: 1.5;
         }
 
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        .cta-box {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 20px;
+            padding: 40px;
             color: var(--white);
             text-align: center;
-            padding: 100px 0;
+            box-shadow: var(--shadow-lg);
         }
 
-        .cta-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 20px;
+        .cta-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
         }
 
-        .cta-description {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+        .cta-box p {
+            margin-bottom: 25px;
             opacity: 0.9;
         }
 
-        .cta-button {
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
             background: var(--accent);
             color: var(--dark);
-            padding: 15px 30px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
             transition: var(--transition);
+            cursor: pointer;
         }
 
-        .cta-button:hover {
+        .btn:hover {
             background: var(--accent-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
         }
 
         /* Responsive Design */
-        @media (max-width: 1024px) {
-            .hero-content {
+        @media (max-width: 992px) {
+            .advantages-container {
                 grid-template-columns: 1fr;
                 gap: 40px;
-                text-align: center;
             }
             
-            .hero-text {
-                max-width: 100%;
+            .challenge-solution-item {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .challenge-part {
+                padding-right: 0;
+                border-right: none;
+                border-bottom: 1px solid var(--gray-light);
+                padding-bottom: 20px;
             }
         }
 
         @media (max-width: 768px) {
-            .section {
-                padding: 60px 0;
-            }
-            
             .section-title {
-                font-size: 2rem;
-            }
-            
-            .hero-title {
                 font-size: 2.2rem;
             }
             
-            .services-grid, .results-grid, .companies-grid {
+            .process-steps {
                 grid-template-columns: 1fr;
             }
             
-            .nav-links {
-                display: none;
-            }
-            
-            .mobile-toggle {
-                display: block;
+            .expectations-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
+
 <body>
-    <!-- Header -->
-    <header class="header">
+    <!-- Why Work With Us Section -->
+    <section class="section why-work-section">
         <div class="container">
-            <nav class="navbar">
-                <div class="logo">
-                    <a href="index.html">
-                        <img src="./assets/img/logoo.png" alt="LaCleo Digital Logo" />
-                    </a>
-                </div>
-
-                <div class="nav-links" id="navLinks">
-                    <div class="nav-item">
-                        <a href="../service.html" class="nav-link">
-                            Services
-                        </a>
-                        <div class="dropdown-menu">
-                            <div class="dropdown-column">
-                                <div class="dropdown-title">Core Services</div>
-                                <a href="../service.html" class="dropdown-item">
-                                    <i class="fas fa-bullseye"></i>
-                                    <span>B2B Lead Generation</span>
-                                </a>
-                                <a href="../email_campaign.html" class="dropdown-item has-nested">
-                                    <div>
-                                        <i class="fas fa-bullhorn"></i>
-                                        <span>Digital Marketing</span>
-                                        <i class="fas fa-chevron-right"></i>
-                                    </div>
-                                    <div class="nested-dropdown">
-                                        <div class="dropdown-title">Digital Marketing</div>
-                                        <a href="#" class="dropdown-item">
-                                            <i class="fas fa-envelope"></i>
-                                            <span>Email Campaigns</span>
-                                        </a>
-                                        <a href="#" class="dropdown-item">
-                                            <i class="fab fa-linkedin"></i>
-                                            <span>LinkedIn Campaigns</span>
-                                        </a>
-                                        <a href="#" class="dropdown-item">
-                                            <i class="fas fa-hashtag"></i>
-                                            <span>Social Media Marketing</span>
-                                        </a>
-                                        <a href="#" class="dropdown-item">
-                                            <i class="fas fa-search"></i>
-                                            <span>SEO</span>
-                                        </a>
-                                        <a href="#" class="dropdown-item">
-                                            <i class="fas fa-ad"></i>
-                                            <span>SEM</span>
-                                        </a>
-                                    </div>
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    <i class="fas fa-headset"></i>
-                                    <span>SDR as a Service</span>
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    <i class="fas fa-database"> </i>
-                                    <span>Data Enrichment</span>
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    <i class="fas fa-list-alt"> </i>
-                                    <span>Pre-Packed Lists</span>
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    <i class="fas fa-shopping-cart"></i>
-                                    <span>E-commerce </span>
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    <i class="fas fa-robot"></i>
-                                    <span>Virtual Assistance</span>
-                                </a>
-                            </div>
-                            <div class="dropdown-column">
-                                <div class="dropdown-title">Global Reach</div>
-                                <a href="#" class="dropdown-item">
-                                    <i class="fas fa-globe-asia"></i>
-                                    <span>APAC</span>
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    <i class="fas fa-globe-americas"></i>
-                                    <span>NAMER</span>
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    <i class="fas fa-globe-europe"></i>
-                                    <span>EMEA</span>
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    <i class="fas fa-globe-asia"></i>
-                                    <span>SKEA</span>
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    <i class="fas fa-globe-asia"></i>
-                                    <span>Australia</span>
-                                </a>
-                            </div>
-                        </div>
+            <div class="section-header">
+                <h2 class="section-title">Why Work With Us</h2>
+                <p class="section-subtitle">We transform challenges into growth opportunities with proven strategies</p>
+            </div>
+            
+            <div class="challenge-solution-grid">
+                <div class="challenge-solution-item">
+                    <div class="challenge-part">
+                        <span class="challenge-label">Challenge</span>
+                        <p class="challenge-text">Complex procurement processes</p>
                     </div>
-                    
-                    <div class="nav-item">
-                        <a href="../sbm.html" class="nav-link">
-                            Solutions
-                        </a>
-                        <div class="dropdown-menu">
-                            <div class="dropdown-column">
-                                <div class="dropdown-title">By Business Stage</div>
-                                <a href="../enterprise.html" class="dropdown-item">
-                                    <i class="fas fa-building"></i>
-                                    <span>Enterprise</span>
-                                </a>
-                                <a href="../sbm.html" class="dropdown-item">
-                                    <i class="fas fa-store"></i>
-                                    <span>SMBs</span>
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    <i class="fas fa-rocket"></i>
-                                    <span>Startups</span>
-                                </a>
-                            </div>
-                            <div class="dropdown-column">
-                                <div class="dropdown-title">By Industry</div>
-                                <a href="#" class="dropdown-item">
-                                    <i class="fas fa-laptop-code"></i>
-                                    <span>Information Technology</span>
-                                </a>
-                                <a href="#" class="dropdown-item active">
-                                    <i class="fas fa-code"></i>
-                                    <span>Software/SaaS</span>
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    <i class="fas fa-coins"></i>
-                                    <span>Financial Services</span>
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    <i class="fas fa-database"></i>
-                                    <span>Data Centers</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="nav-item">
-                        <a href="#" class="nav-link">
-                            Clients
-                        </a>
-                        <div class="dropdown-menu">
-                            <div class="dropdown-column">
-                                <div class="dropdown-title">Success Stories</div>
-                                <a href="#" class="dropdown-item">
-                                    <i class="fas fa-chart-line"></i>
-                                    <span>Case Studies</span>
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    <i class="fas fa-star"></i>
-                                    <span>Testimonials</span>
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    <i class="fas fa-award"></i>
-                                    <span>Reviews</span>
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    <i class="fas fa-handshake"></i>
-                                    <span>Channel Program</span>
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    <i class="fas fa-user-plus"></i>
-                                    <span>Client Login</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="nav-item">
-                        <a href="#" class="nav-link">
-                            About Us
-                        </a>
-                        <div class="dropdown-menu">
-                            <div class="dropdown-column">
-                                <div class="dropdown-title">Our Company</div>
-                                <a href="#" class="dropdown-item">
-                                    <i class="fas fa-history"></i>
-                                    <span>Company Story</span>
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    <i class="fas fa-bullseye"></i>
-                                    <span>Mission & Vision</span>
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    <i class="fas fa-users"></i>
-                                    <span>Meet the Team</span>
-                                </a>
-                            </div>
-                            <div class="dropdown-column">
-                                <div class="dropdown-title">Resource</div>
-                                <a href="#" class="dropdown-item">
-                                    <i class="fas fa-pen-nib "></i>
-                                    <span>Blogs</span>
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    <i class="fas fa-book-reader"></i>
-                                    <span>EBooks</span>
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    <i class="fas fa-newspaper"></i>
-                                    <span>News & Updates</span>
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    <i class="fas fa-shield-alt"></i>
-                                    <span>GDPR Compliance</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="fas fa-question-circle"></i>
-                            FAQs
-                        </a>
+                    <div class="solution-part">
+                        <h3><i class="fas fa-users"></i> How LaCleo Digital Helps</h3>
+                        <p class="solution-text">Engage multiple stakeholders with tailored messaging and coordinated outreach campaigns.</p>
                     </div>
                 </div>
-
-                <div class="nav-actions">
-                    <a href="tel:+1234567890" class="nav-action">
-                        <i class="fas fa-phone"></i>
-                        Call Us
-                    </a>
-                    <div>
-                        <a href="#contact-form-placeholder" class="button">
-                            <i class="fas fa-paper-plane"></i>
-                            Contact
-                        </a>
+                
+                <div class="challenge-solution-item">
+                    <div class="challenge-part">
+                        <span class="challenge-label">Challenge</span>
+                        <p class="challenge-text">Demonstrating ROI early</p>
+                    </div>
+                    <div class="solution-part">
+                        <h3><i class="fas fa-chart-line"></i> How LaCleo Digital Helps</h3>
+                        <p class="solution-text">Provide content that highlights savings, uptime, and scalability to support purchase decisions.</p>
                     </div>
                 </div>
-
-                <div class="mobile-toggle" id="mobileToggle">
-                    <i class="fas fa-bars"></i>
+                
+                <div class="challenge-solution-item">
+                    <div class="challenge-part">
+                        <span class="challenge-label">Challenge</span>
+                        <p class="challenge-text">Lengthy sales cycles</p>
+                    </div>
+                    <div class="solution-part">
+                        <h3><i class="fas fa-tachometer-alt"></i> How LaCleo Digital Helps</h3>
+                        <p class="solution-text">Keep prospects engaged with consistent educational touchpoints to speed up evaluations.</p>
+                    </div>
                 </div>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero-software">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <span class="hero-badge">Software & SaaS Solutions</span>
-                    <h1 class="hero-title">Build, manage, and scale lead generation programs built for sustainable growth</h1>
-                    <p class="hero-description">At LaCleo Digital, we work with software and SaaS companies who need to fill their pipelines, reach the right buyers, and navigate long decision cycles. Our focus is on connecting your solutions to companies that are ready to listen and act.</p>
-                    <a href="#contact-form-placeholder" class="button">
-                        <i class="fas fa-paper-plane"></i>
-                        Get Started Today
-                    </a>
+                
+                <div class="challenge-solution-item">
+                    <div class="challenge-part">
+                        <span class="challenge-label">Challenge</span>
+                        <p class="challenge-text">Building customer loyalty</p>
+                    </div>
+                    <div class="solution-part">
+                        <h3><i class="fas fa-handshake"></i> How LaCleo Digital Helps</h3>
+                        <p class="solution-text">Deliver onboarding and training resources that encourage smooth adoption and improve retention.</p>
+                    </div>
                 </div>
-                <div class="hero-image">
-                    <img src="https://via.placeholder.com/500x400/2563EB/FFFFFF?text=Software+%26+SaaS+Solutions" alt="Software & SaaS Solutions">
+                
+                <div class="challenge-solution-item">
+                    <div class="challenge-part">
+                        <span class="challenge-label">Challenge</span>
+                        <p class="challenge-text">Scaling growth sustainably</p>
+                    </div>
+                    <div class="solution-part">
+                        <h3><i class="fas fa-expand"></i> How LaCleo Digital Helps</h3>
+                        <p class="solution-text">Build scalable lead generation programs with clear metrics to maintain quality as you expand.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="section services-section">
+    <!-- Process Section -->
+    <section class="section process-section">
         <div class="container">
-            <h2 class="section-title">How LaCleo Digital Helps SaaS Companies Grow</h2>
-            <p class="section-subtitle">We provide support across the entire sales development and lead generation process</p>
+            <div class="section-header">
+                <h2 class="section-title">Our Process</h2>
+                <p class="section-subtitle">A systematic approach to driving qualified leads and sustainable growth</p>
+            </div>
             
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3 class="service-title">Strategy & Research</h3>
-                    <p class="service-description">Define your ICP, segment markets, and outline buyer personas to target the right audience effectively.</p>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <h3>Discovery & Goal Setting</h3>
+                    <p>Review market position, customer segments, competition, and define measurable goals.</p>
                 </div>
                 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <h3 class="service-title">Message Development & Content</h3>
-                    <p class="service-description">Build clear messaging on technical needs, ROI, and adoption, backed by briefs, case studies, and webinars.</p>
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <h3>Ideal Customer Profiling</h3>
+                    <p>Identify industries, company sizes, regions, and roles most in need of your services.</p>
                 </div>
                 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-broadcast-tower"></i>
-                    </div>
-                    <h3 class="service-title">Omni-Channel Outreach</h3>
-                    <p class="service-description">Engage through email, LinkedIn, calls, and webinars with consistent follow-ups to maximize reach.</p>
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <h3>Message Development</h3>
+                    <p>Craft messaging focused on reliability, efficiency, security, and performance.</p>
                 </div>
                 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-filter"></i>
-                    </div>
-                    <h3 class="service-title">Lead Qualification & Meeting Setting</h3>
-                    <p class="service-description">Filter high-intent buyers, book demos, and remove unqualified contacts to focus on quality leads.</p>
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <h3>Multi-Channel Execution</h3>
+                    <p>Utilize email, LinkedIn, content marketing, and webinars to reach decision-makers effectively.</p>
                 </div>
                 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-seedling"></i>
-                    </div>
-                    <h3 class="service-title">Nurture & Conversion Support</h3>
-                    <p class="service-description">Maintain interest with timely follow-ups and drip campaigns until leads are ready to convert.</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
-                    <h3 class="service-title">Analysis & Optimization</h3>
-                    <p class="service-description">Track metrics like conversion rates and pipeline velocity to refine results and improve performance.</p>
+                <div class="process-step">
+                    <div class="step-number">05</div>
+                    <h3>Tracking & Optimization</h3>
+                    <p>Monitor lead quality, conversion rates, and adjust campaigns based on data and feedback.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Companies Section -->
-    <section class="section companies-section">
+    <!-- Expectations Section -->
+    <section class="section expectations-section">
         <div class="container">
-            <h2 class="section-title">Examples of Companies We've Supported</h2>
-            <p class="section-subtitle">We've helped diverse software and SaaS businesses achieve their growth objectives</p>
+            <div class="section-header">
+                <h2 class="section-title">What You Can Expect</h2>
+                <p class="section-subtitle">Within six months, LaCleo clients often see remarkable improvements</p>
+            </div>
             
-            <div class="companies-grid">
-                <div class="company-card">
-                    <div class="company-icon">
-                        <i class="fas fa-laptop-code"></i>
+            <div class="expectations-grid">
+                <div class="expectation-item">
+                    <div class="expectation-icon">
+                        <i class="fas fa-user-tie"></i>
                     </div>
-                    <h3 class="company-title">B2B SaaS Firms</h3>
-                    <p class="company-description">Boosting free trials, paid conversions, and product demos for B2B SaaS companies.</p>
+                    <h3>Increased meetings with qualified decision-makers</h3>
                 </div>
                 
-                <div class="company-card">
-                    <div class="company-icon">
-                        <i class="fas fa-server"></i>
+                <div class="expectation-item">
+                    <div class="expectation-icon">
+                        <i class="fas fa-bolt"></i>
                     </div>
-                    <h3 class="company-title">Enterprise Software Vendors</h3>
-                    <p class="company-description">Building relationships with IT and business leaders for enterprise solutions.</p>
+                    <h3>Faster evaluation and purchasing timelines</h3>
                 </div>
                 
-                <div class="company-card">
-                    <div class="company-icon">
-                        <i class="fas fa-cloud"></i>
-                    </div>
-                    <h3 class="company-title">Cloud Providers</h3>
-                    <p class="company-description">Driving qualified signups and implementations for cloud service providers.</p>
-                </div>
-                
-                <div class="company-card">
-                    <div class="company-icon">
+                <div class="expectation-item">
+                    <div class="expectation-icon">
                         <i class="fas fa-puzzle-piece"></i>
                     </div>
-                    <h3 class="company-title">Niche Product Teams</h3>
-                    <p class="company-description">Reaching technical contacts for integrations with specialized software products.</p>
+                    <h3>Better alignment between client needs and services</h3>
                 </div>
                 
-                <div class="company-card">
-                    <div class="company-icon">
-                        <i class="fas fa-brain"></i>
+                <div class="expectation-item">
+                    <div class="expectation-icon">
+                        <i class="fas fa-chart-bar"></i>
                     </div>
-                    <h3 class="company-title">Analytics & AI Startups</h3>
-                    <p class="company-description">Showing proof, use cases, and value to skeptical buyers in emerging tech markets.</p>
+                    <h3>Enhanced pipeline visibility and forecasting accuracy</h3>
+                </div>
+                
+                <div class="expectation-item">
+                    <div class="expectation-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Sustained pipeline growth without sacrificing quality</h3>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Results Section -->
-    <section class="section results-section">
+    <!-- Why Choose Section -->
+    <section class="section why-choose-section">
         <div class="container">
-            <h2 class="section-title" style="color: white;">Results You Can Expect</h2>
-            <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Within 3–6 months, clients often see significant improvements in their sales pipeline</p>
+            <div class="section-header">
+                <h2 class="section-title">Why Choose LaCleo Digital</h2>
+                <p class="section-subtitle">Our unique approach delivers results where generic solutions fail</p>
+            </div>
             
-            <div class="results-grid">
-                <div class="result-card">
-                    <div class="result-icon">
-                        <i class="fas fa-handshake"></i>
+            <div class="advantages-container">
+                <div class="advantages-list">
+                    <div class="advantage-item">
+                        <div class="advantage-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="advantage-text">
+                            <h3>Deep Industry Expertise</h3>
+                            <p>Deep expertise in data center markets and technology infrastructure.</p>
+                        </div>
                     </div>
-                    <h3 class="result-title">More Qualified Meetings</h3>
-                    <p class="result-description">Increase in qualified sales meetings with real buyers who have decision-making authority.</p>
+                    
+                    <div class="advantage-item">
+                        <div class="advantage-icon">
+                            <i class="fas fa-sitemap"></i>
+                        </div>
+                        <div class="advantage-text">
+                            <h3>Multi-Stakeholder Approach</h3>
+                            <p>Campaigns designed for complex, multi-stakeholder sales processes.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="advantage-item">
+                        <div class="advantage-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <div class="advantage-text">
+                            <h3>Transparent Reporting</h3>
+                            <p>Clear, actionable reporting on campaign performance and ROI.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="advantage-item">
+                        <div class="advantage-icon">
+                            <i class="fas fa-arrows-alt"></i>
+                        </div>
+                        <div class="advantage-text">
+                            <h3>Adaptive Strategies</h3>
+                            <p>Flexible approaches aligned with evolving buyer priorities and market changes.</p>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="result-card">
-                    <div class="result-icon">
-                        <i class="fas fa-tachometer-alt"></i>
-                    </div>
-                    <h3 class="result-title">Shorter Sales Cycles</h3>
-                    <p class="result-description">Accelerated movement from trial to purchase with more efficient sales processes.</p>
-                </div>
-                
-                <div class="result-card">
-                    <div class="result-icon">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h3 class="result-title">Higher-Quality Leads</h3>
-                    <p class="result-description">Leads that are budgeted, authorized, and actively searching for solutions.</p>
-                </div>
-                
-                <div class="result-card">
-                    <div class="result-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3 class="result-title">Better ROI</h3>
-                    <p class="result-description">Improved return on investment through focused, targeted outreach strategies.</p>
-                </div>
-                
-                <div class="result-card">
-                    <div class="result-icon">
-                        <i class="fas fa-project-diagram"></i>
-                    </div>
-                    <h3 class="result-title">Predictable Pipeline</h3>
-                    <p class="result-description">A consistent, predictable sales pipeline that supports sustainable business growth.</p>
+                <div class="cta-box">
+                    <h3>Ready to Transform Your Growth?</h3>
+                    <p>Partner with LaCleo Digital to build a reliable lead pipeline and drive consistent growth in your business.</p>
+                    <a href="#contact" class="btn">Start Your Journey</a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h2 class="cta-title">Ready to Transform Your Software Sales Pipeline?</h2>
-            <p class="cta-description">We combine data-driven targeting with deep SaaS and software experience. Each campaign is customized to fit your market and product. You get transparent reporting and the flexibility to adapt as your audience or goals shift.</p>
-            <a href="#contact-form-placeholder" class="cta-button">
-                <i class="fas fa-paper-plane"></i>
-                Start Your Growth Journey Today
-            </a>
         </div>
     </section>
 
     <script>
-        // Mobile menu functionality
+        // Animation on scroll functionality
         document.addEventListener('DOMContentLoaded', function() {
-            const mobileToggle = document.getElementById('mobileToggle');
-            const navLinks = document.getElementById('navLinks');
+            // Initialize animations
+            setTimeout(initAnimations, 500);
             
-            if (mobileToggle && navLinks) {
-                mobileToggle.addEventListener('click', function() {
-                    navLinks.classList.toggle('active');
-                    const icon = mobileToggle.querySelector('i');
-                    if (icon) {
-                        icon.classList.toggle('fa-bars');
-                        icon.classList.toggle('fa-times');
+            // Add hover effects
+            initHoverEffects();
+        });
+
+        function initAnimations() {
+            // Animate challenge-solution items
+            const challengeItems = document.querySelectorAll('.challenge-solution-item');
+            const processSteps = document.querySelectorAll('.process-step');
+            const expectationItems = document.querySelectorAll('.expectation-item');
+            const advantageItems = document.querySelectorAll('.advantage-item');
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('animated');
+                        }, index * 200);
                     }
                 });
-            }
+            }, observerOptions);
             
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 100,
-                            behavior: 'smooth'
-                        });
-                    }
+            // Observe all animatable elements
+            challengeItems.forEach(item => observer.observe(item));
+            processSteps.forEach(step => observer.observe(step));
+            expectationItems.forEach(item => observer.observe(item));
+            advantageItems.forEach(item => observer.observe(item));
+        }
+
+        function initHoverEffects() {
+            // Add hover effects to process steps
+            const processSteps = document.querySelectorAll('.process-step');
+            processSteps.forEach(step => {
+                step.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                });
+                
+                step.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
                 });
             });
-        });
+            
+            // Add hover effects to expectation items
+            const expectationItems = document.querySelectorAll('.expectation-item');
+            expectationItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        }
     </script>
 </body>
 </html>
