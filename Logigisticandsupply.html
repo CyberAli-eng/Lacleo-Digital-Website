@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Logistics and Supply Chain - LaCleo Digital</title>
+    <link rel="stylesheet" href="../css/style.css" />   
+    <link rel="stylesheet" href="../css/service.css" />
+    <!-- <link rel="stylesheet" href="../css/solution.css"/> -->
+            <link rel="icon" type="image/png" href="./assets/img/logoo.png" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+   <style>
+
+ /* Why Work With Us Section */
+        .why-work-section {
+            background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-work-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" opacity="0.05"><circle cx="50" cy="50" r="2" fill="%232563EB"/></svg>');
+            background-size: 50px 50px;
+        }
+
+        .challenge-solution-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .challenge-solution-item {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow-lg);
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .challenge-solution-item.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .challenge-solution-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+        }
+
+        .challenge-part {
+            padding-right: 20px;
+            border-right: 1px solid var(--gray-light);
+        }
+
+        .challenge-label {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .challenge-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dark);
+            line-height: 1.4;
+        }
+
+        .solution-part h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .solution-part h3 i {
+            color: var(--accent);
+        }
+
+        .solution-text {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* Process Section */
+        .process-section {
+            background: var(--white);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .process-step {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 40px 30px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .process-step.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .process-step:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 25px;
+        }
+
+        .process-step h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .process-step p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* Expectations Section */
+        .expectations-section {
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            color: var(--white);
+        }
+
+        .expectations-section .section-title {
+            color: var(--white);
+        }
+
+        .expectations-section .section-subtitle {
+            color: #CBD5E1;
+        }
+
+        .expectations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .expectation-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .expectation-item.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .expectation-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .expectation-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .expectation-icon i {
+            font-size: 1.8rem;
+            color: var(--dark);
+        }
+
+        .expectation-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--white);
+        }
+
+        
+    /* Why Choose Section */
+        .why-choose-section {
+            background: var(--light);
+        }
+
+        .advantages-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 60px;
+            align-items: center;
+        }
+
+        .advantages-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .advantage-item {
+            display: flex;
+            gap: 20px;
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.6s ease;
+        }
+
+        .advantage-item.animated {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .advantage-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--success), #059669);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .advantage-icon i {
+            font-size: 1.3rem;
+            color: var(--white);
+        }
+
+        .advantage-text h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+
+        .advantage-text p {
+            color: var(--gray);
+            line-height: 1.5;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 20px;
+            padding: 40px;
+            color: var(--white);
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cta-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .cta-box p {
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--accent);
+            color: var(--dark);
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .advantages-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .challenge-solution-item {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .challenge-part {
+                padding-right: 0;
+                border-right: none;
+                border-bottom: 1px solid var(--gray-light);
+                padding-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+            
+            .expectations-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+   </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="services-hero-content">
+                <div class="services-hero-text">
+                    <span class="hero-badge">Solutions for Logistics & Supply Chain
+                    </span><br><br>
+                    <p class="hero-description"> Targeted B2B leads that keep your sales team focused on closing.</p>
+
+                </div>
+                <div class="hero-image">
+                    <img src="./assets/img/solution/logicstic.gif" alt="Data Center Solutions" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Client Logos Section -->
+    <div id="clients-placeholder"></div>
+
+   
+
+    <!-- Process Section -->
+    <section class="section process-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-h2">Our Process</h2>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <h3>Discovery & Goal Setting</h3>
+                    <p> Review market position, customer segments, competition, and define measurable goals.
+</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <h3>Ideal Customer Profiling</h3>
+                    <p>Identify industries, company sizes, regions, and roles most in need of data center services.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <h3>Message Development</h3>
+                    <p>Craft messaging focused on reliability, efficiency, security, and performance.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <h3>Multi-Channel Execution</h3>
+                    <p>Utilize email, LinkedIn, content marketing, and webinars and case studies to reach decision-makers effectively.
+.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">05</div>
+                    <h3>Tracking & Optimization</h3>
+                    <p>Monitor lead quality, conversion rates, and sales cycle length; adjust campaigns based on data and feedback.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Why Work With Us Section -->
+    <section class="section why-work-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-h2">Common Challenges We Solve</h2>
+            </div>
+            
+            <div class="challenge-solution-grid">
+                <div class="challenge-solution-item">
+                    <div class="challenge-part">
+                        <span class="challenge-label">Challenge</span>
+                        <p class="challenge-text">Complex decision-making involving multiple stakeholders
+
+</p>
+                    </div>
+                    <div class="solution-part">
+                        <h3><i class="fas fa-users"></i> How LaCleo Digital Helps</h3>
+                        <p class="solution-text">Keep everyone in the loop with clear messaging for all parties.
+
+</p>
+                    </div>
+                </div>
+                
+                <div class="challenge-solution-item">
+                    <div class="challenge-part">
+                        <span class="challenge-label">Challenge</span>
+                        <p class="challenge-text">Lengthy sales cycles
+
+</p>
+                    </div>
+                    <div class="solution-part">
+                        <h3><i class="fas fa-hourglass-half"></i> How LaCleo Digital Helps</h3>
+                        <p class="solution-text">Stay connected and provide helpful content, making decisions happen faster.
+
+</p>
+                    </div>
+                </div>
+                
+                <div class="challenge-solution-item">
+                    <div class="challenge-part">
+                        <span class="challenge-label">Challenge</span>
+                        <p class="challenge-text">Differentiating in a competitive market
+
+</p>
+                    </div>
+                    <div class="solution-part">
+                        <h3><i class="fas fa-trophy"></i> How LaCleo Digital Helps</h3>
+                        <p class="solution-text">Put your strengths forward using relevant content and well-timed outreach.
+
+</p>
+                    </div>
+                </div>
+                
+                <div class="challenge-solution-item">
+                    <div class="challenge-part">
+                        <span class="challenge-label">Challenge</span>
+                        <p class="challenge-text">Scaling pipelines without sacrificing lead quality
+
+</p>
+                    </div>
+                    <div class="solution-part">
+                        <h3><i class="fas fa-balance-scale"></i> How LaCleo Digital Helps</h3>
+                        <p class="solution-text">Grow your list, but watch each opportunity closely to keep standards high.
+
+</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Expectations Section -->
+    <section class="section expectations-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Expected Outcomes</h2>
+                <p class="section-descrip">When you partner with LaCleo Digital for logistics & supply chain support, you can expect:
+</p>
+            </div>
+            
+            <div class="expectations-grid">
+                <div class="expectation-item">
+                    <div class="expectation-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>A more reliable flow of qualified leads</h3>
+                </div>
+                
+                <div class="expectation-item">
+                    <div class="expectation-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Less time lost in manual data work or admin bottlenecks</h3>
+                </div>
+                
+                <div class="expectation-item">
+                    <div class="expectation-icon">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <h3>Better alignment between outreach, operations, and sales</h3>
+                </div>
+                
+                <div class="expectation-item">
+                    <div class="expectation-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Faster responses to prospects and customers</h3>
+                </div>
+                
+                <div class="expectation-item">
+                    <div class="expectation-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>A support team that grows with your business not a burden</h3>
+                </div>
+
+            </div>
+            <br><br>
+            <p class="section-descrip">Move forward with confidence. Let LaCleo Digital support your logistics and supply chain business so you can concentrate on executing operations, reducing costs, and delivering value to your clients.</p>
+        </div>
+    </section>
+
+<br><br>
+ 
+<!-- Testimonials Section -->
+   <div id="review-placeholder"></div>
+   <div id="contact-form-placeholder"></div>
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+<script src="./js/components.js"></script>
+    <script>
+        // Animation on scroll functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize animations
+            setTimeout(initAnimations, 500);
+            
+            // Add hover effects
+            initHoverEffects();
+        });
+
+        function initAnimations() {
+            // Animate challenge-solution items
+            const challengeItems = document.querySelectorAll('.challenge-solution-item');
+            const processSteps = document.querySelectorAll('.process-step');
+            const expectationItems = document.querySelectorAll('.expectation-item');
+            const advantageItems = document.querySelectorAll('.advantage-item');
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('animated');
+                        }, index * 200);
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe all animatable elements
+            challengeItems.forEach(item => observer.observe(item));
+            processSteps.forEach(step => observer.observe(step));
+            expectationItems.forEach(item => observer.observe(item));
+            advantageItems.forEach(item => observer.observe(item));
+        }
+
+        function initHoverEffects() {
+            // Add hover effects to process steps
+            const processSteps = document.querySelectorAll('.process-step');
+            processSteps.forEach(step => {
+                step.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                });
+                
+                step.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Add hover effects to expectation items
+            const expectationItems = document.querySelectorAll('.expectation-item');
+            expectationItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        }
+    </script>
+</body>
+</html>

@@ -3,124 +3,336 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Why Work With Us - LaCleo Digital</title>
-    <link rel="stylesheet" href="../css/style.css" />   
-    <link rel="stylesheet" href="../css/service.css" />
+    <title>About Us - LaCleo Digital</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <style>
-       
+        :root {
+            --primary: #2563EB;
+            --primary-dark: #1D4ED8;
+            --secondary: #8B5CF6;
+            --accent: #FFC107;
+            --accent-dark: #F59E0B;
+            --dark: #1E293B;
+            --light: #F8FAFC;
+            --gray: #64748B;
+            --gray-light: #E2E8F0;
+            --white: #FFFFFF;
+            --success: #10B981;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
 
-        /* Why Work With Us Section */
-        .why-work-section {
-            background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--white);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Hero Section */
+        .about-hero {
+            padding: 180px 0 100px;
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            color: white;
             position: relative;
             overflow: hidden;
         }
 
-        .why-work-section::before {
+        .about-hero::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" opacity="0.05"><circle cx="50" cy="50" r="2" fill="%232563EB"/></svg>');
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" opacity="0.03"><circle cx="50" cy="50" r="2" fill="%23FFFFFF"/></svg>');
             background-size: 50px 50px;
         }
 
-        .challenge-solution-grid {
+        .about-hero-content {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
-            max-width: 900px;
-            margin: 0 auto;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
         }
 
-        .challenge-solution-item {
-            background: var(--white);
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+            color: var(--dark);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .about-hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: white;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: var(--accent);
+            line-height: 1.4;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: #CBD5E1;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .about-hero-image {
+            position: relative;
+        }
+
+        .image-container {
+            position: relative;
+        }
+
+        .about-hero-image img {
+            width: 100%;
             border-radius: 15px;
-            padding: 30px;
-            box-shadow: var(--shadow-lg);
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .floating-element {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
             align-items: center;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
+            justify-content: center;
+            animation: floatElement 8s ease-in-out infinite;
+        }
+
+        .floating-element i {
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+
+        @keyframes floatElement {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(10deg);
+            }
+        }
+
+        /* Who We Are Section */
+        .who-we-are {
+            background: var(--white);
+        }
+
+        .who-we-are-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .content-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .content-text p {
+            color: var(--gray);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .stat-box {
+            background: var(--light);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .stat-box:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        /* Our Story Section */
+        .our-story {
+            background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
             position: relative;
             overflow: hidden;
         }
 
-        .challenge-solution-item.animated {
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 60px auto 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 60px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .timeline-item.animated {
             opacity: 1;
             transform: translateY(0);
         }
 
-        .challenge-solution-item::before {
+        .timeline-content {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow-lg);
+            width: 45%;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: auto;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: auto;
+        }
+
+        .timeline-content::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--primary), var(--secondary));
-        }
-
-        .challenge-part {
-            padding-right: 20px;
-            border-right: 1px solid var(--gray-light);
-        }
-
-        .challenge-label {
-            display: inline-block;
+            top: 30px;
+            width: 20px;
+            height: 20px;
             background: var(--primary);
-            color: var(--white);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 15px;
+            border-radius: 50%;
         }
 
-        .challenge-text {
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -40px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -40px;
+        }
+
+        .timeline-year {
             font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--dark);
-            line-height: 1.4;
-        }
-
-        .solution-part h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
+            font-weight: 700;
             color: var(--primary);
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            margin-bottom: 10px;
         }
 
-        .solution-part h3 i {
-            color: var(--accent);
-        }
-
-        .solution-text {
+        .timeline-text {
             color: var(--gray);
             line-height: 1.6;
         }
 
-        /* Process Section */
-        .process-section {
+        /* What We Do Section */
+        .what-we-do {
             background: var(--white);
         }
 
-        .process-steps {
+        .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-top: 60px;
         }
 
-        .process-step {
+        .service-card {
             background: var(--white);
             border-radius: 15px;
             padding: 40px 30px;
@@ -131,141 +343,251 @@
             transform: translateY(30px);
         }
 
-        .process-step.animated {
+        .service-card.animated {
             opacity: 1;
             transform: translateY(0);
         }
 
-        .process-step:hover {
+        .service-card:hover {
             transform: translateY(-10px);
             box-shadow: var(--shadow-lg);
         }
 
-        .step-number {
-            width: 60px;
-            height: 60px;
+        .service-icon {
+            width: 80px;
+            height: 80px;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: var(--white);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 700;
             margin: 0 auto 25px;
         }
 
-        .process-step h3 {
+        .service-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+
+        .service-card h3 {
             font-size: 1.4rem;
             margin-bottom: 15px;
             color: var(--dark);
         }
 
-        .process-step p {
+        .service-card p {
             color: var(--gray);
             line-height: 1.6;
         }
 
-        /* Expectations Section */
-        .expectations-section {
-            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
-            color: var(--white);
+        /* Our Approach Section */
+        .our-approach {
+            background: var(--light);
         }
 
-        .expectations-section .section-title {
-            color: var(--white);
-        }
-
-        .expectations-section .section-subtitle {
-            color: #CBD5E1;
-        }
-
-        .expectations-grid {
+        .approach-steps {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
             margin-top: 60px;
         }
 
-        .expectation-item {
-            background: rgba(255, 255, 255, 0.05);
+        .approach-step {
+            background: var(--white);
             border-radius: 15px;
-            padding: 30px;
+            padding: 40px 30px;
+            box-shadow: var(--shadow);
             text-align: center;
             transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.1);
             opacity: 0;
             transform: translateY(30px);
         }
 
-        .expectation-item.animated {
+        .approach-step.animated {
             opacity: 1;
             transform: translateY(0);
         }
 
-        .expectation-item:hover {
+        .approach-step:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            color: var(--dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 0 auto 25px;
+        }
+
+        .approach-step h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .approach-step p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* Our Values Section */
+        .our-values {
+            background: var(--white);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .value-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 40px 30px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+            border-left: 4px solid var(--primary);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .value-card.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--success), #059669);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+        }
+
+        .value-icon i {
+            font-size: 1.8rem;
+            color: white;
+        }
+
+        .value-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .value-card p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* Mission Vision Section */
+        .mission-vision {
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .mission-vision .section-title {
+            color: white;
+        }
+
+        .mission-vision-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 60px;
+        }
+
+        .mission-box, .vision-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 50px 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+
+        .mission-box:hover, .vision-box:hover {
             background: rgba(255, 255, 255, 0.1);
             transform: translateY(-5px);
         }
 
-        .expectation-icon {
-            width: 70px;
-            height: 70px;
+        .mission-icon, .vision-icon {
+            width: 80px;
+            height: 80px;
             background: linear-gradient(135deg, var(--accent), var(--accent-dark));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 20px;
+            margin: 0 auto 25px;
         }
 
-        .expectation-icon i {
-            font-size: 1.8rem;
+        .mission-icon i, .vision-icon i {
+            font-size: 2.2rem;
             color: var(--dark);
         }
 
-        .expectation-item h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: var(--white);
+        .mission-box h3, .vision-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: white;
         }
 
-        /* Why Choose Section */
-        .why-choose-section {
+        .mission-box p, .vision-box p {
+            font-size: 1.1rem;
+            color: #CBD5E1;
+            line-height: 1.6;
+        }
+
+        /* Why Choose Us Section */
+        .why-choose-us {
             background: var(--light);
         }
 
-        .advantages-container {
+        .reasons-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
             margin-top: 60px;
-            align-items: center;
         }
 
-        .advantages-list {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-
-        .advantage-item {
+        .reason-item {
             display: flex;
             gap: 20px;
+            align-items: flex-start;
             opacity: 0;
             transform: translateX(-30px);
             transition: all 0.6s ease;
         }
 
-        .advantage-item.animated {
+        .reason-item.animated {
             opacity: 1;
             transform: translateX(0);
         }
 
-        .advantage-icon {
+        .reason-icon {
             width: 50px;
             height: 50px;
-            background: linear-gradient(135deg, var(--success), #059669);
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -273,76 +595,47 @@
             flex-shrink: 0;
         }
 
-        .advantage-icon i {
+        .reason-icon i {
             font-size: 1.3rem;
-            color: var(--white);
+            color: white;
         }
 
-        .advantage-text h3 {
+        .reason-text h3 {
             font-size: 1.2rem;
             margin-bottom: 8px;
             color: var(--dark);
         }
 
-        .advantage-text p {
+        .reason-text p {
             color: var(--gray);
             line-height: 1.5;
         }
 
-        .cta-box {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            border-radius: 20px;
-            padding: 40px;
-            color: var(--white);
-            text-align: center;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .cta-box h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-        }
-
-        .cta-box p {
-            margin-bottom: 25px;
-            opacity: 0.9;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: var(--accent);
-            color: var(--dark);
-            border: none;
-            border-radius: 30px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: var(--transition);
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background: var(--accent-dark);
-            transform: translateY(-2px);
-        }
-
         /* Responsive Design */
         @media (max-width: 992px) {
-            .advantages-container {
+            .about-hero-content, .who-we-are-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+            
+            .mission-vision-container {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
             
-            .challenge-solution-item {
-                grid-template-columns: 1fr;
-                gap: 20px;
+            .timeline::before {
+                left: 30px;
             }
             
-            .challenge-part {
-                padding-right: 0;
-                border-right: none;
-                border-bottom: 1px solid var(--gray-light);
-                padding-bottom: 20px;
+            .timeline-content {
+                width: calc(100% - 80px);
+                margin-left: 80px !important;
+            }
+            
+            .timeline-content::before {
+                left: -40px !important;
+                right: auto !important;
             }
         }
 
@@ -351,11 +644,23 @@
                 font-size: 2.2rem;
             }
             
-            .process-steps {
+            .about-hero {
+                padding: 150px 0 80px;
+            }
+            
+            .about-hero-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .stats-grid {
                 grid-template-columns: 1fr;
             }
             
-            .expectations-grid {
+            .services-grid, .approach-steps, .values-grid, .reasons-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -363,217 +668,360 @@
 </head>
 
 <body>
-    <!-- Why Work With Us Section -->
-    <section class="section why-work-section">
+    <!-- About Hero Section -->
+    <section class="section about-hero">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Why Work With Us</h2>
-                <p class="section-subtitle">We transform challenges into growth opportunities with proven strategies</p>
-            </div>
-            
-            <div class="challenge-solution-grid">
-                <div class="challenge-solution-item">
-                    <div class="challenge-part">
-                        <span class="challenge-label">Challenge</span>
-                        <p class="challenge-text">Complex procurement processes</p>
-                    </div>
-                    <div class="solution-part">
-                        <h3><i class="fas fa-users"></i> How LaCleo Digital Helps</h3>
-                        <p class="solution-text">Engage multiple stakeholders with tailored messaging and coordinated outreach campaigns.</p>
-                    </div>
+            <div class="about-hero-content">
+                <div class="about-hero-text">
+                    <span class="hero-badge">Our Story</span>
+                    <h1>About Us</h1>
+                    <h2 class="hero-subtitle">Your B2B Growth Partner</h2>
+                    <p class="hero-description">LaCleo Digital helps companies grow sales pipelines, reach the right prospects, and achieve lasting business results. Our main goal is sustained growth, not short-term wins.</p>
                 </div>
-                
-                <div class="challenge-solution-item">
-                    <div class="challenge-part">
-                        <span class="challenge-label">Challenge</span>
-                        <p class="challenge-text">Demonstrating ROI early</p>
-                    </div>
-                    <div class="solution-part">
-                        <h3><i class="fas fa-chart-line"></i> How LaCleo Digital Helps</h3>
-                        <p class="solution-text">Provide content that highlights savings, uptime, and scalability to support purchase decisions.</p>
-                    </div>
-                </div>
-                
-                <div class="challenge-solution-item">
-                    <div class="challenge-part">
-                        <span class="challenge-label">Challenge</span>
-                        <p class="challenge-text">Lengthy sales cycles</p>
-                    </div>
-                    <div class="solution-part">
-                        <h3><i class="fas fa-tachometer-alt"></i> How LaCleo Digital Helps</h3>
-                        <p class="solution-text">Keep prospects engaged with consistent educational touchpoints to speed up evaluations.</p>
-                    </div>
-                </div>
-                
-                <div class="challenge-solution-item">
-                    <div class="challenge-part">
-                        <span class="challenge-label">Challenge</span>
-                        <p class="challenge-text">Building customer loyalty</p>
-                    </div>
-                    <div class="solution-part">
-                        <h3><i class="fas fa-handshake"></i> How LaCleo Digital Helps</h3>
-                        <p class="solution-text">Deliver onboarding and training resources that encourage smooth adoption and improve retention.</p>
-                    </div>
-                </div>
-                
-                <div class="challenge-solution-item">
-                    <div class="challenge-part">
-                        <span class="challenge-label">Challenge</span>
-                        <p class="challenge-text">Scaling growth sustainably</p>
-                    </div>
-                    <div class="solution-part">
-                        <h3><i class="fas fa-expand"></i> How LaCleo Digital Helps</h3>
-                        <p class="solution-text">Build scalable lead generation programs with clear metrics to maintain quality as you expand.</p>
+                <div class="about-hero-image">
+                    <div class="image-container">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="LaCleo Digital Team">
+                        <div class="floating-elements">
+                            <div class="floating-element" style="top: 20%; left: 10%; animation-delay: 0s;">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="floating-element" style="top: 60%; left: 80%; animation-delay: 2s;">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="floating-element" style="top: 80%; left: 20%; animation-delay: 4s;">
+                                <i class="fas fa-users"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Process Section -->
-    <section class="section process-section">
+    <!-- Who We Are Section -->
+    <section class="section who-we-are">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Our Process</h2>
-                <p class="section-subtitle">A systematic approach to driving qualified leads and sustainable growth</p>
-            </div>
-            
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="step-number">01</div>
-                    <h3>Discovery & Goal Setting</h3>
-                    <p>Review market position, customer segments, competition, and define measurable goals.</p>
+            <div class="who-we-are-content">
+                <div class="content-text">
+                    <h2>Who We Are</h2>
+                    <p>LaCleo Digital is your B2B growth partner. Our team helps companies grow sales pipelines, reach the right prospects, and achieve lasting business results. Our main goal is sustained growth, not short-term wins.</p>
+                    <p>We work with clients of all sizes, from startups to large enterprises. Our focus is on improving outreach, strengthening market presence, and supporting revenue growth.</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <div class="stat-number">250+</div>
+                            <div class="stat-label">Clients Served</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">97%</div>
+                            <div class="stat-label">Client Satisfaction</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">40%</div>
+                            <div class="stat-label">Avg. Growth</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">5+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="process-step">
-                    <div class="step-number">02</div>
-                    <h3>Ideal Customer Profiling</h3>
-                    <p>Identify industries, company sizes, regions, and roles most in need of your services.</p>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-number">03</div>
-                    <h3>Message Development</h3>
-                    <p>Craft messaging focused on reliability, efficiency, security, and performance.</p>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-number">04</div>
-                    <h3>Multi-Channel Execution</h3>
-                    <p>Utilize email, LinkedIn, content marketing, and webinars to reach decision-makers effectively.</p>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-number">05</div>
-                    <h3>Tracking & Optimization</h3>
-                    <p>Monitor lead quality, conversion rates, and adjust campaigns based on data and feedback.</p>
+                <div class="content-image">
+                    <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Our Team" style="width: 100%; border-radius: 15px;">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Expectations Section -->
-    <section class="section expectations-section">
+    <!-- Our Story Section -->
+    <section class="section our-story">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">What You Can Expect</h2>
-                <p class="section-subtitle">Within six months, LaCleo clients often see remarkable improvements</p>
+                <h2 class="section-title">Our Story</h2>
+                <p class="section-subtitle">From vision to reality - our journey of growth and innovation</p>
             </div>
             
-            <div class="expectations-grid">
-                <div class="expectation-item">
-                    <div class="expectation-icon">
-                        <i class="fas fa-user-tie"></i>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">The Beginning</div>
+                        <p class="timeline-text">We started with a clear mission: close the gap between marketing activities and real sales outcomes. Our founders recognized the need for a more strategic approach to B2B growth.</p>
                     </div>
-                    <h3>Increased meetings with qualified decision-makers</h3>
                 </div>
                 
-                <div class="expectation-item">
-                    <div class="expectation-icon">
-                        <i class="fas fa-bolt"></i>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">Growth & Refinement</div>
+                        <p class="timeline-text">Over time, we refined processes, made outreach more structured, and built a team skilled in both strategy and practical execution. We learned what truly drives results for our clients.</p>
                     </div>
-                    <h3>Faster evaluation and purchasing timelines</h3>
                 </div>
                 
-                <div class="expectation-item">
-                    <div class="expectation-icon">
-                        <i class="fas fa-puzzle-piece"></i>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">Expansion & Expertise</div>
+                        <p class="timeline-text">With hundreds of campaigns under our belt, we know what works—and what doesn't—across industries, regions, and buyer types. This experience keeps us flexible and reliable.</p>
                     </div>
-                    <h3>Better alignment between client needs and services</h3>
                 </div>
                 
-                <div class="expectation-item">
-                    <div class="expectation-icon">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">Today & Beyond</div>
+                        <p class="timeline-text">We continue to evolve, adopting new technologies and strategies while staying true to our core mission: delivering sustainable growth for our clients through proven B2B marketing approaches.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Do Section -->
+    <section class="section what-we-do">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What We Do</h2>
+                <p class="section-subtitle">Tailored growth solutions for B2B companies of all sizes</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Lead Generation & Prospecting</h3>
+                    <p>Identify and engage with high-quality prospects that match your ideal customer profile.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>Appointment Setting & Sales Outreach</h3>
+                    <p>Schedule qualified meetings and manage outreach campaigns that drive conversions.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-broadcast-tower"></i>
+                    </div>
+                    <h3>Multi-Channel Campaign Strategy</h3>
+                    <p>Integrated approaches using email, LinkedIn, calls, and content marketing.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Account-Based Marketing</h3>
+                    <p>Targeted campaigns focused on your most valuable accounts and prospects.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Data Enrichment & Verification</h3>
+                    <p>Clean, verify and enhance your database with accurate contact information.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
                         <i class="fas fa-chart-bar"></i>
                     </div>
-                    <h3>Enhanced pipeline visibility and forecasting accuracy</h3>
-                </div>
-                
-                <div class="expectation-item">
-                    <div class="expectation-icon">
-                        <i class="fas fa-seedling"></i>
-                    </div>
-                    <h3>Sustained pipeline growth without sacrificing quality</h3>
+                    <h3>Campaign Tracking & Optimization</h3>
+                    <p>Monitor performance and continuously improve results through data-driven insights.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Section -->
-    <section class="section why-choose-section">
+    <!-- Our Approach Section -->
+    <section class="section our-approach">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Why Choose LaCleo Digital</h2>
-                <p class="section-subtitle">Our unique approach delivers results where generic solutions fail</p>
+                <h2 class="section-title">Our Approach</h2>
+                <p class="section-subtitle">A systematic methodology that delivers consistent results</p>
             </div>
             
-            <div class="advantages-container">
-                <div class="advantages-list">
-                    <div class="advantage-item">
-                        <div class="advantage-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <div class="advantage-text">
-                            <h3>Deep Industry Expertise</h3>
-                            <p>Deep expertise in data center markets and technology infrastructure.</p>
-                        </div>
+            <div class="approach-steps">
+                <div class="approach-step">
+                    <div class="step-number">1</div>
+                    <h3>Discovery & Collaboration</h3>
+                    <p>We start by listening to understand your business, goals, challenges, and how customers make decisions.</p>
+                </div>
+                
+                <div class="approach-step">
+                    <div class="step-number">2</div>
+                    <h3>Strategic Design</h3>
+                    <p>We plan targets, messaging, channels, and define success metrics aligned with your objectives.</p>
+                </div>
+                
+                <div class="approach-step">
+                    <div class="step-number">3</div>
+                    <h3>Execution with Discipline</h3>
+                    <p>Every campaign is tailored with personalized messaging and consistent follow-up for maximum impact.</p>
+                </div>
+                
+                <div class="approach-step">
+                    <div class="step-number">4</div>
+                    <h3>Measurement & Adjustment</h3>
+                    <p>We monitor results and adjust strategies as needed to optimize performance and ROI.</p>
+                </div>
+                
+                <div class="approach-step">
+                    <div class="step-number">5</div>
+                    <h3>Long-Term Partnership</h3>
+                    <p>Growth is ongoing, so we adapt as your needs and the market evolve for sustained success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values Section -->
+    <section class="section our-values">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Values</h2>
+                <p class="section-subtitle">The principles that guide everything we do</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-eye"></i>
                     </div>
-                    
-                    <div class="advantage-item">
-                        <div class="advantage-icon">
-                            <i class="fas fa-sitemap"></i>
-                        </div>
-                        <div class="advantage-text">
-                            <h3>Multi-Stakeholder Approach</h3>
-                            <p>Campaigns designed for complex, multi-stakeholder sales processes.</p>
-                        </div>
+                    <h3>Transparency</h3>
+                    <p>We keep you updated on progress and next steps with clear, honest communication.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-award"></i>
                     </div>
-                    
-                    <div class="advantage-item">
-                        <div class="advantage-icon">
-                            <i class="fas fa-chart-pie"></i>
-                        </div>
-                        <div class="advantage-text">
-                            <h3>Transparent Reporting</h3>
-                            <p>Clear, actionable reporting on campaign performance and ROI.</p>
-                        </div>
+                    <h3>Responsibility</h3>
+                    <p>We fully own our work and results, taking accountability for delivering on our promises.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-search"></i>
                     </div>
-                    
-                    <div class="advantage-item">
-                        <div class="advantage-icon">
-                            <i class="fas fa-arrows-alt"></i>
-                        </div>
-                        <div class="advantage-text">
-                            <h3>Adaptive Strategies</h3>
-                            <p>Flexible approaches aligned with evolving buyer priorities and market changes.</p>
-                        </div>
+                    <h3>Curiosity</h3>
+                    <p>We seek new ideas and continuous improvement to stay ahead of market trends.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Quality</h3>
+                    <p>Every interaction reflects your brand's integrity and our commitment to excellence.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <h3>Client-First</h3>
+                    <p>Your goals guide all our efforts, ensuring we deliver value that matters to your business.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section class="section mission-vision">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Mission & Vision</h2>
+                <p class="section-subtitle">The purpose that drives us and the future we're building</p>
+            </div>
+            
+            <div class="mission-vision-container">
+                <div class="mission-box">
+                    <div class="mission-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>Help B2B companies grow with steady, qualified opportunities through strategic marketing and sales alignment.</p>
+                </div>
+                
+                <div class="vision-box">
+                    <div class="vision-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>Create a future where businesses trust their pipelines—no guesswork, just predictable, sustainable growth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="section why-choose-us">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose Us</h2>
+                <p class="section-subtitle">What sets LaCleo Digital apart from other B2B marketing partners</p>
+            </div>
+            
+            <div class="reasons-grid">
+                <div class="reason-item">
+                    <div class="reason-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <div class="reason-text">
+                        <h3>Marketing-Sales Alignment</h3>
+                        <p>We connect marketing and sales with real focus on results, ensuring both teams work toward common goals.</p>
                     </div>
                 </div>
                 
-                <div class="cta-box">
-                    <h3>Ready to Transform Your Growth?</h3>
-                    <p>Partner with LaCleo Digital to build a reliable lead pipeline and drive consistent growth in your business.</p>
-                    <a href="#contact" class="btn">Start Your Journey</a>
+                <div class="reason-item">
+                    <div class="reason-icon">
+                        <i class="fas fa-filter"></i>
+                    </div>
+                    <div class="reason-text">
+                        <h3>High Qualification Standards</h3>
+                        <p>We set high standards for lead qualification and follow-through, delivering only the most promising opportunities.</p>
+                    </div>
+                </div>
+                
+                <div class="reason-item">
+                    <div class="reason-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div class="reason-text">
+                        <h3>Tailored Campaigns</h3>
+                        <p>We customize campaigns to your industry and business needs, avoiding one-size-fits-all approaches.</p>
+                    </div>
+                </div>
+                
+                <div class="reason-item">
+                    <div class="reason-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <div class="reason-text">
+                        <h3>Continuous Optimization</h3>
+                        <p>We are committed to ongoing optimization and learning, constantly improving our strategies.</p>
+                    </div>
+                </div>
+                
+                <div class="reason-item">
+                    <div class="reason-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div class="reason-text">
+                        <h3>Responsive Support</h3>
+                        <p>We provide open, responsive support, ensuring you always have access to our team when you need it.</p>
+                    </div>
+                </div>
+                
+                <div class="reason-item">
+                    <div class="reason-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="reason-text">
+                        <h3>Partnership Approach</h3>
+                        <p>We work as an extension of your team, invested in your success as if it were our own.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -590,11 +1038,12 @@
         });
 
         function initAnimations() {
-            // Animate challenge-solution items
-            const challengeItems = document.querySelectorAll('.challenge-solution-item');
-            const processSteps = document.querySelectorAll('.process-step');
-            const expectationItems = document.querySelectorAll('.expectation-item');
-            const advantageItems = document.querySelectorAll('.advantage-item');
+            // Elements to animate
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            const serviceCards = document.querySelectorAll('.service-card');
+            const approachSteps = document.querySelectorAll('.approach-step');
+            const valueCards = document.querySelectorAll('.value-card');
+            const reasonItems = document.querySelectorAll('.reason-item');
             
             const observerOptions = {
                 threshold: 0.1,
@@ -612,18 +1061,31 @@
             }, observerOptions);
             
             // Observe all animatable elements
-            challengeItems.forEach(item => observer.observe(item));
-            processSteps.forEach(step => observer.observe(step));
-            expectationItems.forEach(item => observer.observe(item));
-            advantageItems.forEach(item => observer.observe(item));
+            timelineItems.forEach(item => observer.observe(item));
+            serviceCards.forEach(card => observer.observe(card));
+            approachSteps.forEach(step => observer.observe(step));
+            valueCards.forEach(card => observer.observe(card));
+            reasonItems.forEach(item => observer.observe(item));
         }
 
         function initHoverEffects() {
-            // Add hover effects to process steps
-            const processSteps = document.querySelectorAll('.process-step');
-            processSteps.forEach(step => {
-                step.addEventListener('mouseenter', function() {
+            // Add hover effects to service cards
+            const serviceCards = document.querySelectorAll('.service-card');
+            serviceCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
                     this.style.transform = 'translateY(-10px)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Add hover effects to approach steps
+            const approachSteps = document.querySelectorAll('.approach-step');
+            approachSteps.forEach(step => {
+                step.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
                 });
                 
                 step.addEventListener('mouseleave', function() {
@@ -631,14 +1093,14 @@
                 });
             });
             
-            // Add hover effects to expectation items
-            const expectationItems = document.querySelectorAll('.expectation-item');
-            expectationItems.forEach(item => {
-                item.addEventListener('mouseenter', function() {
+            // Add hover effects to value cards
+            const valueCards = document.querySelectorAll('.value-card');
+            valueCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
                     this.style.transform = 'translateY(-5px)';
                 });
                 
-                item.addEventListener('mouseleave', function() {
+                card.addEventListener('mouseleave', function() {
                     this.style.transform = 'translateY(0)';
                 });
             });
