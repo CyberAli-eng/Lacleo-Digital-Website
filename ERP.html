@@ -116,6 +116,33 @@
             color: var(--gray);
             line-height: 1.6;
         }
+        @media (max-width: 768px) {
+            .challenge-solution-item {
+                grid-template-columns: 1fr;
+            }
+
+            .challenge-part {
+                border-right: none;
+                border-bottom: 1px solid var(--gray-light);
+                padding-right: 0;
+                padding-bottom: 20px;
+                margin-bottom: 20px;
+            }
+        }
+                 .btn-outline {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: #0f1010;
+        border: 2px solid #f4bb58;
+        border-radius: 30px;
+        text-decoration: none;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    .btn-outline:hover {
+        background-color: #58bdf4;
+        color: #fff;
+    }
     </style>
 </head>
 
@@ -154,7 +181,7 @@
         </div>
     </section>
 
-
+<div id="clients-placeholder"></div>
 
     <!-- Services Section -->
     <section class="section services-section">

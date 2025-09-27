@@ -297,6 +297,7 @@ ul {
 .hero {
     padding: 150px 0 80px;
     background: white;
+    margin-top: 0;
 }
 
 .hero-content {
