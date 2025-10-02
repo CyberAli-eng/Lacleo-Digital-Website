@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* LaCleo Digital Design System - Professional B2B lead generation platform 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 215 28% 17%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 28% 17%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 28% 17%;
+
+    /* Professional blue palette for B2B trust */
+    --primary: 214 84% 56%;
+    --primary-foreground: 0 0% 98%;
+    --primary-dark: 214 84% 46%;
+    --primary-light: 214 84% 66%;
+
+    /* Clean neutral tones */
+    --secondary: 210 17% 96%;
+    --secondary-foreground: 215 28% 17%;
+
+    --muted: 210 17% 96%;
+    --muted-foreground: 215 13% 45%;
+
+    /* Accent orange for CTAs */
+    --accent: 24 95% 53%;
+    --accent-foreground: 0 0% 98%;
+    --accent-hover: 24 95% 48%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 214 84% 56%;
+
+    /* Custom semantic tokens */
+    --hero-gradient: linear-gradient(135deg, hsl(214 84% 56%) 0%, hsl(214 84% 46%) 100%);
+    --section-bg: 210 17% 98%;
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 98%;
+    
+    /* Typography scale */
+    --font-heading: 'Inter', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+    
+    /* Shadows */
+    --shadow-subtle: 0 1px 3px 0 hsl(215 28% 17% / 0.1), 0 1px 2px -1px hsl(215 28% 17% / 0.1);
+    --shadow-medium: 0 4px 6px -1px hsl(215 28% 17% / 0.1), 0 2px 4px -2px hsl(215 28% 17% / 0.1);
+    --shadow-large: 0 10px 15px -3px hsl(215 28% 17% / 0.1), 0 4px 6px -4px hsl(215 28% 17% / 0.1);
+    
+    /* Transitions */
+    --transition-base: 150ms ease-in-out;
+    --transition-slow: 300ms ease-in-out;
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 215 28% 7%;
+    --foreground: 210 17% 96%;
+
+    --card: 215 28% 9%;
+    --card-foreground: 210 17% 96%;
+
+    --popover: 215 28% 9%;
+    --popover-foreground: 210 17% 96%;
+
+    --primary: 214 84% 66%;
+    --primary-foreground: 215 28% 7%;
+    --primary-dark: 214 84% 56%;
+    --primary-light: 214 84% 76%;
+
+    --secondary: 215 25% 12%;
+    --secondary-foreground: 210 17% 96%;
+
+    --muted: 215 25% 12%;
+    --muted-foreground: 215 13% 65%;
+
+    --accent: 24 95% 53%;
+    --accent-foreground: 0 0% 98%;
+    --accent-hover: 24 95% 58%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 215 25% 15%;
+    --input: 215 25% 15%;
+    --ring: 214 84% 66%;
+    
+    --hero-gradient: linear-gradient(135deg, hsl(214 84% 66%) 0%, hsl(214 84% 56%) 100%);
+    --section-bg: 215 28% 5%;
+    --success: 142 76% 46%;
+    --success-foreground: 0 0% 98%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+}
+
+@layer components {
+  .hero-gradient {
+    background: var(--hero-gradient);
+  }
+  
+  .section-bg {
+    background-color: hsl(var(--section-bg));
+  }
+  
+  .text-gradient {
+    background: var(--hero-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .shadow-subtle {
+    box-shadow: var(--shadow-subtle);
+  }
+  
+  .shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+  
+  .shadow-large {
+    box-shadow: var(--shadow-large);
+  }
+  
+  .transition-base {
+    transition: var(--transition-base);
+  }
+  
+  .transition-slow {
+    transition: var(--transition-slow);
+  }
+}

@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../../../Lacleo-Digital-Website"
+		},
+		{
+			"path": "../../.."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Lacleo-Digital-Website"
+	}
+}
